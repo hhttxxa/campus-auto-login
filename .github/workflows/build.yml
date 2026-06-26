@@ -11,11 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build APK with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer
-        with:
-          command: buildozer -v android debug
+      - name: Build APK in kivy/buildozer container
+        run: |
+          docker run --rm \
+            -v "$PWD:/home/user/hostcwd" \
+            -e BUILDOZER_WARN="yes" \
+            kivy/buildozer:latest \
+            /bin/sh -c "cd /home/user/hostcwd && buildozer -v android debug"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
