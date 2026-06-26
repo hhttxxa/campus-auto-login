@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Buildozer / p4a 构建产物
+.buildozer/
+bin/
+buildozer.spec.bak
+
+# 本地配置与运行时数据（含账号密码，勿提交）
+config.json
+logs/
+*.log
+state.json
+*.har
+
+# 测试临时文件
+logout.har
+
+# IDE
+.vscode/
+.idea/
+.claude/

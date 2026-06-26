@@ -1,0 +1,8 @@
+# Python 依赖（PC 开发与 Android 打包共用）
+# Kivy：App UI
+# requests：登录 HTTP 请求
+# pycryptodome：Dr.COM ePortal 登录参数 AES-ECB 加密
+# Android 打包时 buildozer 还会自动加入 python3、android、jnius 等运行时依赖
+kivy>=2.3.0
+requests>=2.31.0
+pycryptodome>=3.20.0

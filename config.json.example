@@ -1,0 +1,25 @@
+{
+  "_comment": "Dr.COM ePortal 4.2.1 配置。加密/URL已硬编码在 drcom.py（逆向自portal JS），这里只需填账号密码和检测参数。",
+
+  "portal": {
+    "base_url": "http://172.17.0.2"
+  },
+
+  "credentials": {
+    "username": "2302110524",
+    "password": "224619"
+  },
+
+  "check": {
+    "_comment": "probe_url 用来判断是否已联网：被重定向到 172.17.0.2 = 未登录；返回 204/2xx = 已联网",
+    "probe_url": "http://connect.rom.miui.com/generate_204",
+    "interval_seconds": 120,
+    "timeout_seconds": 5
+  },
+
+  "behavior": {
+    "_comment": "relogin_when_online=true 严格按需求：已登录就注销再登录",
+    "relogin_when_online": true,
+    "cooldown_after_logout_seconds": 3
+  }
+}
